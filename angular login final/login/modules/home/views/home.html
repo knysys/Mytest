@@ -1,0 +1,51 @@
+
+<div class="col-md-12" style="margin-left: 65px; width:450px">
+    <md-content class="md-padding" style="background-color:white;">
+        <form ng-submit="submitForm(userForm.$valid)" name="userForm">
+            <!--<p style="font-size: 35px; ">Angular Validation Form</p>-->
+
+
+            <div layout-gt-sm="row" class="form-group" ng-class="{ 'has-error' : userForm.id.$invalid && !userForm.id.$pristine }">
+                <md-input-container flex="">
+                    <label>Id</label>
+                    <input type="text" style="width:400px;" name="id" class="form-control" ng-model="user.id" required>
+                    <br><br>
+                    <p ng-show="userForm.id.$invalid && !userForm.id.$pristine" class="help-block" style="color:red; font-size:10px">You Id is required.</p>
+                </md-input-container>
+            </div>
+
+            <div layout-gt-sm="row" class="form-group" ng-class="{ 'has-error' : userForm.id.$invalid && !userForm.id.$pristine }">
+                <md-input-container flex="">
+                    <label>Name</label>
+                    <input type="text" style="width:400px;" name="name" class="form-control" ng-model="user.name" required>
+                    <br><br>
+                    <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block" style="color:red; font-size:10px">Your name is required.</p>
+                </md-input-container>
+            </div>
+
+
+            <div layout-gt-sm="row" class="form-group" ng-class="{ 'has-error' : userForm.dept.$invalid && !userForm.dept.$pristine }">
+                <md-input-container flex="">
+                    <label>Department Name</label>
+                    <input type="text" style="width:400px;" name="dept" class="form-control in" ng-model="user.dept" ng-minlength="3" ng-maxlength="20" required>
+                    <br><br>
+                    <p ng-show="userForm.dept.$error.minlength" class="help-block" style="color:red; font-size:10px;">Dept name is too short.</p>
+                    <br>
+                    <p ng-show="userForm.dept.$error.maxlength" class="help-block" style="color:red; font-size:10px">Dept name is too long.</p>
+                </md-input-container>
+            </div>
+            <div layout-gt-sm="row" class="form-group" ng-class="{ 'has-error' : userForm.id.$invalid && !userForm.id.$pristine }">
+                <md-input-container flex="">
+                    <label>Issue</label>
+                    <textarea type="text" style="width:400px;" name="issue" class="form-control" ng-model="user.issue" required></textarea>
+                    <p ng-show="userForm.issue.$invalid && !userForm.issue.$pristine" class="help-block" style="color:red; font-size:10px">Your Issue is required.</p>
+                </md-input-container>
+            </div>
+            <md-button type="submit" class="md-raised md-primary" style="border-radius:5px;">Submit</md-button>
+            <md-button href="#/login" class="md-raised md-primary" style="border-radius:5px;">Log Out</md-button>
+        </form>
+
+    </md-content>
+
+
+</div>
